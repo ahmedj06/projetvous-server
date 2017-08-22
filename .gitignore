@@ -62,3 +62,6 @@ typings/
 
 # Runtime configuration for swagger app
 config/runtime.yaml
+
+# MongoDB datastore
+db/
