@@ -9,6 +9,8 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.12.3",
+    "mongoose": "^4.11.8",
+    "morgan": "^1.8.2",
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
@@ -16,7 +18,9 @@
     "supertest": "^1.0.0"
   },
   "scripts": {
-    "start": "node app.js",
-    "test": "swagger project test"
+    "start_swagger": "nodemon app_swagger.js",
+    "start": "nodemon ./bin/www",
+    "test": "swagger project test",
+    "edit": "swagger project edit"
   }
 }
