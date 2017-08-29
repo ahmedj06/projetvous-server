@@ -6,7 +6,7 @@ info:
 host: localhost:10010
 # basePath prefixes all resource paths
 #MODIFY Version
-basePath: /v1
+basePath: /api/v1
 # 
 schemes:
   # tip: remove http to make production-grade
@@ -20,11 +20,12 @@ produces:
   - application/json
   - application/xml
 paths:
-  /user:
+  /users:
     # our controller name
-    x-swagger-router-controller: user
+    x-swagger-router-controller: userSwaggerController
     get:
       description: get the users list
+      operationId: createUser
       # define the type of response for Success "200" and Error
       responses:
         "200":

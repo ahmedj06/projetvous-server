@@ -1,0 +1,24 @@
+{
+    "app": {
+      "port": 3000
+    },
+    "db": {
+      "dialect": "mongodb",
+      "host": "localhost",
+      "port": 27017,
+      "username": "",
+      "password": ""
+    },
+    "key_service": {
+      "host": "localhost",
+      "port": 6379,
+      "key_namespace": "auth:",
+      "key_separator": ":",
+      "expires_seconds": 6000
+    },
+    "jwt": {
+      "secret": "placeholder-secretKey",
+      "algorithm": "HS256",
+      "secret_separator": ":"
+    }
+}

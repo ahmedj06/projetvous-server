@@ -7,10 +7,20 @@
   "author": "",
   "license": "",
   "main": "app.js",
+  "env": {
+    "PYTHON": "C:/Users/sopra/.windows-build-tools/python27"
+  },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "express": "^4.12.3",
+    "jsonwebtoken": "^7.4.3",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^4.11.8",
     "morgan": "^1.8.2",
+    "nconf": "^0.8.4",
+    "node-gyp": "^3.6.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0",
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
@@ -18,9 +28,6 @@
     "supertest": "^1.0.0"
   },
   "scripts": {
-    "start_swagger": "nodemon app_swagger.js",
-    "start": "nodemon ./bin/www",
-    "test": "swagger project test",
-    "edit": "swagger project edit"
+    "start": "nodemon ./bin/www"
   }
 }
