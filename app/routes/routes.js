@@ -1,8 +1,9 @@
 
 var express = require('express');
 var router = express.Router();
-var userRoutes = require('./publicRoutes');
-//var config = require('../config/main');
+var publicRoutes = require('./publicRoutes');
+var errorRoutes = require('./errorRoutes');
+var config = require('../../config');
 
 /*
  * Routes that can be accessed by any one
@@ -10,15 +11,9 @@ var userRoutes = require('./publicRoutes');
 router.use("/", publicRoutes);
 
 
+router.use('/api/'+config.get("app:version")+'/test', errorRoutes);
 
-
-/*
- * Routes that can be accessed only by autheticated users
- */ 
-
-//router.use('/api/'+config.version+'/prodowner', products.getAll);
-/*
-* Routes that can be accessed only by authenticated & authorized users
+/* Routes that can be accessed only by authenticated & authorized users
 
 router.get('/api/v1/admin/users', user.getAll);
 router.get('/api/v1/admin/user/:id', user.getOne);

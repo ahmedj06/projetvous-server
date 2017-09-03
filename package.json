@@ -7,9 +7,6 @@
   "author": "",
   "license": "",
   "main": "app.js",
-  "env": {
-    "PYTHON": "C:/Users/sopra/.windows-build-tools/python27"
-  },
   "dependencies": {
     "bcrypt": "^1.0.3",
     "express": "^4.12.3",

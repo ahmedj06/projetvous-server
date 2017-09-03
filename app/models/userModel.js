@@ -1,8 +1,8 @@
 // Load required packages
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
-var config = require('../config/main');
-mongoose.connect(config.database)
+var config = require('../../config');
+mongoose.connect(config.get("db:url"))
 
 var UserSchema = new mongoose.Schema({
   email: {
@@ -15,14 +15,23 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  profile: {
+    firstname: { type: String },
+    lastname: { type: String }
+  },
   role: {
     type: String,
-    enum: ['Client', 'Manager', 'Admin'],
+    enum: ['Member', 'Client', 'Owner', 'Admin'],
     default: 'Client'
-  }
+  },
+  resetPasswordToken: { type: String },
+  resetPasswordExpires: { type: Date }
+},
+{
+  timestamps: true
 });
 
-// Enregistrement de l'utilisateur (toujours hasher les mots de passe en production) 
+// Enregistrement de l'utilisateur (toujours hasher les mots de passe en production) .pre veut dire action avant enregistrement (save)
 UserSchema.pre('save', function (next) {  
   var user = this;
   if (this.isModified('password') || this.isNew) {

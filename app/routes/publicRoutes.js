@@ -8,7 +8,7 @@ router.post('/register', function(req, res, next) {
   userController.registerUser(req, res, next);
 });
 
-router.get('/login', function(req, res, next) {
+router.post('/login', function(req, res, next) {
   userController.loginUser(req, res, next);
 });
 

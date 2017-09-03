@@ -4,10 +4,12 @@
     },
     "db": {
       "dialect": "mongodb",
+      "dbname": "projetvous",
       "host": "localhost",
       "port": 27017,
       "username": "",
-      "password": ""
+      "password": "",
+      "url": "mongodb://localhost:27017/projetvous"
     },
     "key_service": {
       "host": "localhost",
@@ -19,6 +21,7 @@
     "jwt": {
       "secret": "placeholder-secretKey",
       "algorithm": "HS256",
-      "secret_separator": ":"
+      "secret_separator": ":",
+      "session": "false"
     }
 }
