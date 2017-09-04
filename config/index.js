@@ -1,14 +1,7 @@
-var nconf = require('nconf');
+'use strict';
 
-function Config() {
-  nconf.argv().env();
-  var environment = nconf.get('NODE_ENV') || 'development';
-  nconf.file(environment, './config/environments/' + environment.toLowerCase() + '.json');
-  nconf.file('default', './config/default.json');
-}
+const ENV = process.env.NODE_ENV || 'development';
+const config = require('./environments/'+ENV.toLowerCase());
+          require('./default');
 
-Config.prototype.get = function(key) {
-  return nconf.get(key);
-};
-
-module.exports = new Config();
+module.exports = config;

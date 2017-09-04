@@ -1,15 +1,13 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var userController = require('../controllers/userController');
+var accountCtrl = require('../controllers/account');
 
 
-router.post('/register', function(req, res, next) {
-  userController.registerUser(req, res, next);
-});
-
+router.post('/register', accountCtrl.register);
+/*
 router.post('/login', function(req, res, next) {
   userController.loginUser(req, res, next);
 });
-
+*/
 module.exports = router;

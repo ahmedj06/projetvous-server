@@ -1,12 +1,8 @@
 var express = require('express');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var passport = require('passport');  
-var jwt = require('jsonwebtoken');
-var routes = require('./app/routes/routes');
-var mongoose = require('mongoose');
+var passport = require('passport');
 var config = require('./config');
-mongoose.connect(config.get("db:url"));
 
 var app = express();
 
@@ -17,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Initialize passport for use
 app.use(passport.initialize());
 // Bring in defined Passport Strategy
-require('./app/auth/passport').jwtLogin(passport);
+require('./config/strategies/jwtbearer')();
 
 app.all('/*', function(req, res, next) {
   // CORS headers
@@ -32,7 +28,8 @@ app.all('/*', function(req, res, next) {
   }
 });
 
-app.use('/', routes);
+//app.use('/', routes);
+require('./config/initializers/routes').init(app);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

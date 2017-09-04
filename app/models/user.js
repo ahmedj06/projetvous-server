@@ -1,8 +1,8 @@
 // Load required packages
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
-var config = require('../../config');
-mongoose.connect(config.get("db:url"))
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const config = require('../../config');
+mongoose.connect(config.db.url);
 
 var UserSchema = new mongoose.Schema({
   email: {
