@@ -2,11 +2,10 @@
 
 const bodyParser = require('body-parser');
 
-
 module.exports.init = initExpress;
 
 function initExpress(app) {
-
+    
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
 

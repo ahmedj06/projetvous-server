@@ -71,5 +71,5 @@ Les actions
 			- acceder à un contributeur ou a un projet et voir son descriptif
 				- ajouter comme partenaire
 		- Onglet/page contributeur de projet
-		- Historique des chat
+		- Historique des chats
 		- Chatter avec vos partenaires

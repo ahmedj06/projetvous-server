@@ -1,7 +1,6 @@
 
 'use strict';
 
-
 module.exports.init = initError;
 
 function initError(app) {
